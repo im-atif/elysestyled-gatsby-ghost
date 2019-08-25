@@ -2,6 +2,8 @@
 
 > Gatsby front-end for elysestyled.com, using Ghost as a headless CMS.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/115a4c63-abc2-42f3-9455-828b61e58967/deploy-status)](https://app.netlify.com/sites/elyse-styled-gatsby/deploys)
+
 ## Architecture
 
 This site works by:
@@ -21,3 +23,10 @@ gatsby develop
 ```
 
 This pulls content from `elysestyled.com` with settings in `.ghost.json`.
+
+*TODO* add how to steps on running/building CSS, other tools, etc.
+
+## Netlify Deploy
+
+Any push update to the `elyse-theme` branch should automatically update Netlify at https://elyse-styled-gatsby.netlify.com/
+
