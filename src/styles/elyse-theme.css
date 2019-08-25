@@ -76,6 +76,7 @@ h1 {
     font-family: "Tiempos Headline";
     line-height: 1.3;
     color: var(--dusk);
+    font-style: italic;
 }
 
 h2, h3, h4, h5, h6 {
