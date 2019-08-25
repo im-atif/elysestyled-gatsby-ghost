@@ -1,0 +1,964 @@
+/* ------------------------------------------------------------------------- */
+/* COLOR VARIABLES --------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+:root {
+    --twilight: rgba(22, 30, 49, 1);
+    --dusk: rgb(28, 86, 141);
+    --navy: rgba(7, 57, 104, 1);
+    --cadet: rgba(139, 171, 181, 1);
+    --cadet-half: rgba(139, 171, 181, .25);
+
+    --grenat: rgba(93, 23, 42, 1);
+    --dustyrose: rgba(193, 110, 112, 1);
+    --rosy: rgba(193, 110, 112, .125);
+
+    --cream: #fcfbf9;
+    --vanilla: rgba(238, 227, 220, 1);
+    --taupe: #8A817C;
+    --cocoa: #493e37;
+    --camel: rgba(183, 140, 76, 0.45);
+}
+
+/* ------------------------------------------------------------------------- */
+/* BODY STYLES ------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+body {
+    margin: 0;
+}
+
+/* ------------------------------------------------------------------------- */
+/* TYPOGRAPHY -------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+body {
+    font-family: "Tiempos Text";
+    font-weight: 400;
+    font-size: var(--font-size-5);
+    line-height: 1.75;
+    color: var(--twilight);
+}
+
+p, ul, ol {
+    margin: 0 0 1em 0;
+    font-size: var(--font-size-4);
+}
+
+ul, ol {
+    padding-left: 20px; /* hanging bullets mebbe? */
+    line-height: 2;
+}
+
+strong {
+    font-weight: 600;
+}
+
+/* TYPOGRAPHY VARIABLES */
+:root {
+    --font-size-1: 2.357rem;
+    --font-size-2: 1.8rem;
+    --font-size-3: 1.777rem;
+    --font-size-4: 1.25rem;
+    --font-size-5: 1.125rem;
+    --font-size-6: 1rem;
+    --font-size-7: .8rem;
+}
+
+@media screen and (min-width: 991px) {
+    :root {
+        --font-size-1: 3.157rem;
+        --font-size-2: 2.369rem;
+        --font-size-7: .7rem;
+    }
+}
+
+h1 {
+    font-size: var(--font-size-1);
+    font-weight: 800;
+    font-family: "Tiempos Headline";
+    line-height: 1.3;
+    color: var(--dusk);
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: "Tiempos Headline";
+    font-weight: 800;
+    font-style: normal;
+    line-height: 1.3;
+    color: var(--navy);
+}
+
+h2 {
+    font-size: var(--font-size-2);
+    margin: 4rem 0 1rem 0;
+}
+
+h3 {
+    font-size: var(--font-size-3);
+    margin: 2rem 0 1rem 0;
+}
+
+h4 {
+    font-size: var(--font-size-4);
+    margin: .75rem 0 .5rem;
+}
+
+h5 {
+    font-size: var(--font-size-5);
+    margin: .75rem 0 .5rem;
+}
+
+h6 {
+    font-size: var(--font-size-6);
+    margin: .75rem 0 .5rem;
+}
+
+small {
+    font-size: var(--font-size-7);
+}
+
+blockquote {
+    margin: 1em 0;
+    color: var(--dustyrose);
+    font-family: "Tiempos Headline";
+    font-style: italic;
+    font-weight: 800;
+    font-size: var(--font-size-3);
+    letter-spacing: 0.5px;
+}
+
+@media screen and (min-width: 1200px) {
+    blockquote {
+        width: 80vw;
+        margin-left: -13rem;
+    }
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background: var(--cadet-half);
+    width: 100%;
+}
+
+/* LINK STYLES ------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+a,
+a:visited {
+    color: var(--dustyrose);
+    transition: color 250ms ease-in;
+    text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+    text-decoration: none;
+    outline: 0;
+}
+
+
+/* ------------------------------------------------------------------------- */
+/* HOMEPAGE: GRID LAYOUT --------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+.container {
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 767px) {
+    .container {
+        width: 85%;
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 90%;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: "header" "content" "pagination" "sidebar" "footer";
+    justify-content: center;
+    row-gap: 1em;
+}
+
+@media screen and (min-width: 767px) {
+    .grid-container {
+        grid-template-columns: 80%;
+    }
+}
+
+/* PAGE SPECIFIC GRID CLASSES ---------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+.home-template, .paged {}
+.post-template {}
+
+/* GRID TEMPLATE AREAS ----------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+header { grid-area: header; }
+.content { grid-area: content; }
+.sidebar { grid-area: sidebar;}
+.pagination { grid-area: pagination; }
+footer { grid-area: footer;}
+
+
+/* ------------------------------------------------------------------------- */
+/* HEADER ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------- */
+header {}
+
+/* BLOG TITLE ------------------------------------------------------------ */
+
+.blog-title {
+    grid-template-areas: "blog-title";
+    padding-top: 10px;
+}
+
+.blog-title h1 {
+    font-size: var(--font-size-1);
+    font-style: italic;
+    margin: 0;
+}
+
+@media screen and (min-width: 451px) {
+    .blog-title h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .blog-title h1 {
+        font-size: 4.5rem;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .blog-title h1 {
+        font-size: 6rem;
+    }
+}
+
+.blog-title h1 .blog-title-link {
+    color: var(--navy);
+}
+
+.blog-title-link,
+.blog-title-link:focus,
+.blog-title-link:active,
+.blog-title-link:visited,
+.blog-title-link:hover {
+    transition: none;
+    padding: 0;
+    text-decoration: none;
+    background: none;
+    border-radius: 0;
+}
+
+/* COVER IMAGE ------------------------------------------------------------ */
+.cover-image img {
+    max-width: 80%;
+}
+
+/* ------------------------------------------------------------------------- */
+/* CONTENT ----------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+/* Styles text/post content on all pages. */
+.content {}
+
+.post {
+    padding-top: 2rem;
+    margin-bottom: 4rem;
+    border-top: 2px solid var(--cadet-half);
+}
+
+@media screen and (min-width: 767px) {
+    .post {
+        border-top: none;
+        border-bottom: 2px solid var(--cadet-half);
+    }
+    .post:last-of-type {
+        border-bottom: none;
+    }
+}
+
+
+/* POST META INFO ---------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+.post-meta {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-bottom: .5rem;
+    letter-spacing: 0.5px;
+    font-family: "Rubik";
+    font-weight: 500;
+}
+
+/* TAGS -------------------------------------------------------------------- */
+.post-tags-list {}
+
+.post-tag {
+    text-transform: uppercase;
+    font-size: var(--font-size-7);
+}
+
+.post-tag a {
+    color: var(--taupe);
+    padding: 1px 4px;
+}
+
+.post-tag a:focus,
+.post-tag a:hover {
+    background-color: var(--vanilla);
+    border-radius: 2px;
+    outline: 0;
+}
+
+.post-tag-separator {
+    color: var(--taupe);
+}
+
+/* DATE -------------------------------------------------------------------- */
+.post-date {
+    text-transform: uppercase;
+    font-size: var(--font-size-7);
+    color: var(--cadet);
+    margin-right: 2rem;
+}
+
+/* AUTHOR ------------------------------------------------------------------ */
+.post-author {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: var(--font-size-7);
+    color: var(--cadet);
+    margin-right: 2rem;
+    display: none; /* currently not showing authors, since it's only me */
+}
+
+.post-author img {
+    width: 25px;
+    height: 25px;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+
+/* POST TITLE -------------------------------------------------------------- */
+/* post-title is a h1 */
+.post-title {
+    margin-top: 0; /* reset top margin to sit by date */
+    margin-bottom: 1.4rem;
+    word-wrap: break-word;
+}
+
+/* POST IMAGE -------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+
+.post-image img {
+    width: 100%;
+}
+
+/* EXCERPT ----------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+.post-excerpt {
+    width: 88%;
+    color: var(--navy);
+}
+
+/* ------------------------------------------------------------------------- */
+/* SIDEBAR ----------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+.sidebar {}
+
+@media screen and (min-width: 767px) {
+    .tag-template .sidebar,
+    .post-template .sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-gap: 2rem 5rem;
+        grid-template-areas: "about about""work tags";
+    }
+}
+
+.sidebar-section-bio {
+    grid-area: about;
+}
+.sidebar-section-tags {
+    grid-area: tags;
+}
+.sidebar-section-work {
+    grid-area: work;
+}
+
+.sidebar-section-recents li {
+    line-height: 1.25;
+    margin-bottom: .75rem;
+    position: relative;
+    padding-left: 8px;
+}
+
+.sidebar-section-recents li:before {
+    content: " ";
+    width: 100px;
+    height: 25px;
+    background: linear-gradient(to bottom, transparent 0, transparent 45%, var(--rosy) 45%, var(--rosy) 45%, var(--rosy) 55%, var(--rosy) 55%, transparent 55%, transparent 100%);
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -1px;
+}
+
+.sidebar a {
+    color: var(--dustyrose);
+}
+
+.sidebar a:hover,
+.sidebar a:focus {
+    background-color: var(--rosy);
+    border-radius: 2px;
+    outline: 0;
+}
+
+.sidebar p {
+    font-size: var(--font-size-6);
+    font-style: italic;
+    color: var(--cocoa);
+    max-width: 90%;
+}
+
+.sidebar-section {
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--vanilla);
+}
+
+.sidebar-title {
+    font-family: "Tiempos Headline";
+    font-size: var(--font-size-3);
+    font-style: italic;
+    text-transform: lowercase;
+    color: var(--grenat);
+    margin: 0 0 1rem 0;
+}
+
+.sidebar-section ul {
+    margin-left: -8px;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.sidebar-tag {
+    font-family: "Rubik";
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: var(--font-size-7);
+}
+
+.sidebar-tag a {
+    display: block; /* larger tap target for touch */
+    padding: 8px 4px 6px 8px;
+}
+
+.social-media {
+    font-size: var(--font-size-7);
+    display: block;
+}
+
+.social-media-link { display: block; }
+
+.social-media-link,
+.social-media-link:active,
+.social-media-link:visited {
+    font-family: "Rubik";
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 1px 4px;
+}
+
+.social-media-link .icon-instagram {
+    color: var(--dustyrose);
+    font-size: var(--font-size-7);
+    margin-right: 2px;
+}
+
+.sidebar-section-bio-profile-img {
+    border-radius: 100%;
+    max-width: 50%;
+}
+
+@media screen and (min-width: 767px) {
+    .tag-template .sidebar-section-bio-wrapper,
+    .post-template .sidebar-section-bio-wrapper {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .tag-template .sidebar-section-bio-profile-img,
+    .post-template .sidebar-section-bio-profile-img {
+        max-width: 20%;
+        flex: 0 1 auto;
+        margin-right: 3rem;
+    }
+
+    .tag-template .sidebar-section-bio-details,
+    .post-template .sidebar-section-bio-details {
+        flex: 0 0 45%;
+    }
+}
+
+/* ------------------------------------------------------------------------- */
+/* NAVIGATION -------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+/* {{navigation}} is currently in the sidebar element */
+
+ul.nav {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.nav a {
+    font-family: "Rubik";
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: var(--font-size-7);
+    display: block;
+    padding: 1px 4px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+
+
+/* ------------------------------------------------------------------------- */
+/* PAGINATION -------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+.pagination {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    font-family: "Rubik";
+    font-weight: 500;
+    font-size: var(--font-size-6);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--taupe);
+    border-top: 2px solid var(--vanilla);
+    /* border-bottom: 2px solid var(--vanilla); */
+    padding: 1rem 0;
+}
+
+@media screen and (min-width: 320px) {
+    .pagination {
+        margin-bottom: 2rem;
+    }
+}
+
+.page-number {}
+.page-number-current {}
+
+.pagination-posts {}
+
+.pagination-posts a.older-posts {
+    margin-left: 15px;
+}
+
+/* ------------------------------------------------------------------------- */
+/* HOMEPAGE PAGE ----------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+@media screen and (min-width: 767px) {
+    .page-template .grid-container,
+    .home-template .grid-container,
+    .paged .grid-container {
+        grid-template-columns: 80% auto;
+        grid-template-rows: auto auto auto;
+        grid-gap: 20px 40px;
+        grid-template-areas: "header header""content sidebar""pagination none""footer footer";
+    }
+}
+
+@media screen and (min-width: 996px) {
+    .page-template .grid-container,
+    .home-template .grid-container,
+    .paged .grid-container {
+        grid-template-columns: 70% auto;
+        grid-gap: 20px 100px;
+    }
+}
+
+
+.home-template .post,
+.tag-template .post,
+.paged .post {
+    background: #f7f7f7;
+    padding: 2rem;
+    border-radius: 2px;
+}
+
+.home-template .post-image,
+.tag-template .post-image,
+.paged .post-image {
+    margin-bottom: 20px;
+    height: 20vw;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+/* INSTAFEED --------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+.instafeed {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: row nowrap;
+    margin-bottom: 2em;
+}
+
+.instafeed a {
+    flex: 1 1 auto;
+}
+
+.instafeed img {
+    max-width: 96%;
+}
+
+/* ------------------------------------------------------------------------- */
+/* POST PAGE --------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+/* .post-template is on the body; .post is the article element */
+
+.post-template .blog-title h1,
+.tag-template .blog-title h1 {
+    font-size: var(--font-size-2);
+    opacity: .5;
+}
+
+@media screen and (min-width: 767px) {
+    .post-template .post h1 {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    /* hella desktop styles */
+
+    .post-template .post {
+        margin: 0 4rem 0 8rem;
+    }
+
+    .post-template .post h1 {
+        font-size: 5rem;
+    }
+
+    .post-template .post h1,
+    .post-template .post h2 {
+        transform: translateX(-8rem);
+    }
+}
+
+/* sometimes it's a link, sometime's its not, i'm too lazy to fix it */
+.post .post-title,
+.post .post-title a {
+    color: var(--dusk);
+}
+
+.post-article a:active,
+.post-article a:focus,
+.post-article a:hover {
+    background: linear-gradient(to bottom, transparent 0, transparent 45%, var(--rosy) 45%, var(--rosy) 45%, var(--rosy) 55%, var(--rosy) 55%, transparent 55%, transparent 100%);
+}
+
+/* IMAGES ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------- */
+
+.post-article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.post-article img {
+    display: block;
+    max-width: 100%;
+}
+
+.kg-width-wide img {
+    max-width: 85vw;
+}
+
+.kg-width-full img {
+    max-width: 100vw;
+    width: 100vw;
+}
+
+.post-article figure {
+    align-self: center;
+    margin: 2rem 0;
+}
+
+.post-article figcaption {
+    padding: 1rem 0;
+    font-size: var(--font-size-6);
+    font-style: italic;
+    color: var(--taupe);
+    text-align: left;
+}
+
+.kg-width-full figcaption {
+    padding-left: 1rem;
+}
+
+@media screen and (min-width: 1200px) {
+    .post-article figure {
+        margin-left: -4rem;
+        /* hacky way to override the alignment margin */
+    }
+}
+
+
+/* IMG GALLERY ------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+
+.kg-gallery-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1040px;
+    width: 100%;
+}
+
+.kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.kg-gallery-image img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.kg-gallery-row {
+    margin: 0 0 .75rem 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+    margin: 0 0 0 0.75em;
+}
+
+/* RECENTS ON POST PAGE ---------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+@media screen and (min-width: 1200px) {
+    .recent-posts {
+        width: 68vw;
+        margin-left: -8rem;
+    }
+}
+
+.recent-posts-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+}
+
+@media screen and (min-width: 767px) {
+    .recent-posts-wrapper {
+        flex-flow: row nowrap;
+    }
+}
+
+.recent-posts-post {
+    background: #f7f7f7;
+    border-bottom: 2px solid var(--cadet-half);
+    padding: 0.5rem 1.5rem;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 767px) {
+    .recent-posts-post {
+        flex: 0 0 20%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .recent-posts-post {
+        flex: 0 0 27%;
+    }
+}
+
+.recent-post-link {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 1em;
+    line-height: 1.1;
+}
+
+.recent-post-image {
+    max-height: 150px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+.recent-post-image img {
+    max-width: 100%;
+}
+
+/* ------------------------------------------------------------------------- */
+/* STATIC PAGE ------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+.page-template .post-title {
+    text-transform: lowercase;
+    margin: 3rem 0 2rem;
+}
+
+.page-template .post-title {
+    font-style: italic;
+}
+
+.page-template .post-image {
+}
+
+.page-template .post-meta {
+    display: none;
+}
+
+.page-about .sidebar-section-bio {
+    display: none; /* no dupes! */
+}
+
+/* TAG PAGE ---------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+.tag-template-header {
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.tag-template-header-tagname {
+    font-size: var(--font-size-3);
+    font-family: "Rubik";
+    text-transform: uppercase;
+    color: var(--cocoa);
+    font-weight: 600;
+}
+
+.tag-template-header-tagdescription {
+    font-size: var(--font-size-6);
+    color: var(--taupe);
+    font-style: italic;
+    margin: 0;
+}
+
+.tag-template .post-tags-list {
+    display: none;
+}
+
+/* ------------------------------------------------------------------------- */
+/* INSTAGRAM WIDGET -------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+
+
+/* ------------------------------------------------------------------------- */
+/* DISQUS ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------- */
+/* Disqus Thread */
+#disqus_thread {
+    margin: 4rem 0;
+}
+
+@media screen and (min-width: 1200px) {
+    #disqus_thread {
+        width: 68vw;
+        margin-left: -8rem;
+    }
+}
+
+/* ------------------------------------------------------------------------- */
+/* FOOTER ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------- */
+footer {
+    padding: 20px 0;
+    font-family: "Rubik";
+    font-weight: 500;
+    font-size: var(--font-size-7);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--taupe);
+}
+
+/* ------------------------------------------------------------------------- */
+/* ICOMOON ----------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?wz95x5');
+    src: url('../fonts/icomoon.eot?wz95x5#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?wz95x5') format('truetype'),
+        url('../fonts/icomoon.woff?wz95x5') format('woff'),
+        url('../fonts/icomoon.svg?wz95x5#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-quotes-left:before {
+    content: "\e907";
+}
+
+.icon-share2:before {
+    content: "\e900";
+}
+
+.icon-instagram:before {
+    content: "\e902";
+}
+
+
+/* ------------------------------------------------------------------------- */
+/* FONT-FACE DEFINITIONS --------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url('../fonts/tiempos/TiemposHeadlineWeb-Bold.woff2') format('woff2'),
+    url('../fonts/tiempos/TiemposHeadlineWeb-Bold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url('../fonts/tiempos/TiemposHeadlineWeb-BoldItalic.woff2') format('woff2'), url('../fonts/tiempos/TiemposHeadlineWeb-BoldItalic.woff') format('woff');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('../fonts/tiempos/TiemposTextWeb-Regular.woff2') format('woff2'), url('../fonts/tiempos/TiemposTextWeb-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('../fonts/tiempos/TiemposTextWeb-RegularItalic.woff2') format('woff2'), url('../fonts/tiempos/TiemposTextWeb-RegularItalic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
